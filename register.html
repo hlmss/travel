@@ -74,6 +74,32 @@
         </form>
         </div>
     </section>
+    
+    <script type="text/javascript">
+        
+     function identify(e){
+        e.preventDefault();
+        var form = e.target;
+        var myname1 = form["myname1"].value;
+        var myemail = form["myemail"].value;
+        var myphone = form["myphone"].value; 
+        var myage = form["myage"].value; 
+        
+        var user = {
+            email, 
+            myname1,
+            myphone,
+            myage
+        };
+
+        analytics.identify(user.fullname, {
+          name: user.myname1,
+          email: user.myemail,
+          phone: user.myphone,
+          age: user.myage  
+        });
+     }
+    </script>        
 
 <!-- Footer -->
 
